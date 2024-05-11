@@ -11,8 +11,8 @@ namespace Ontap_NET104.Configurations
             // Set khóa chính
             builder.HasKey(p => p.Username);
             // Cấu hình thuộc tính
-            builder.Property(p => p.Password).HasColumnType("varchar(256)");
-            builder.Property(p => p.Address).HasColumnType("nvarchar(256)");
+            //builder.Property(p => p.Password).HasColumnType("varchar(256)");
+            //builder.Property(p => p.Address).HasColumnType("nvarchar(256)");
         }
     }
 }
