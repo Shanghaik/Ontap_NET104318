@@ -26,7 +26,7 @@ namespace Ontap_NET104.Controllers
                 else
                 {
                     HttpContext.Session.SetString("username", username); // Lưu username vào session
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Product");
                 }
             }
         }
@@ -50,6 +50,9 @@ namespace Ontap_NET104.Controllers
             try
             {
                 context.Accounts.Add(account);
+                // Khi tạo tài khoản đồng thời tạo ra 1 Giỏ hàng tương ứng với nó
+                Cart cart = new Cart() { Username = account.Username, Status = 1, Description = "Đẹp trai" };
+                context.Carts.Add(cart);
                 context.SaveChanges();
                 TempData["SuccessMessage"] = "Create account successfully!";
                 return RedirectToAction("Login", "Account");
