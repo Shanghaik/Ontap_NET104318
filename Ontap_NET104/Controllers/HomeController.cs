@@ -21,6 +21,7 @@ namespace Ontap_NET104.Controllers
                 ViewData["login"] = "Chưa đăng nhập";
             }
             else ViewData["login"] = "Xin chào "+ sessiondata;
+
             return View();
         }
 
